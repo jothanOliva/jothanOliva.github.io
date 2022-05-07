@@ -46,6 +46,7 @@
                 <div class="col-9">09218475291</div>
             </div>
         </div>
+        <div class="row" style="margin: 0px 160px;margin-top: 5px;"><h4>Timeline</h4></div>
         <div class="timeline-main" style="overflow:hidden;">
             <div class="row timeline-piece">
                 <div class="row timeline-dialoque timeline-dialoque-left">
@@ -85,7 +86,7 @@
                         </div>
                     </div>
                     <div class="col" style="text-align: left;">
-                        <h5 style="">Graphic Artists</h5>
+                        <h5 style="">Graphic Designer</h5>
                         <div style="">
                             During my internship I applied for IT solution company called collabux, since there was other interns working several projects there I was assign to do some graphic arts instead.
                         </div>
@@ -152,6 +153,12 @@
                 </div>
             </div>
         </div>
+        <div class="row" style="margin: 0px 160px;margin-top: 5px;display:none;"><h4>Skills</h4></div>
+        <div class="row" style="margin: 0px 160px;margin-top: 5px;display:none;">>
+            <div class="meter orange nostripes">
+	            <span style="width: 33.3%"></span>
+            </div>
+        </div>
     </body>
 </html>
 <script>
@@ -159,6 +166,17 @@
         adjustTimeLineSpacing();
         $(".timeline-main").on('DOMSubtreeModified', function () {
             adjustTimeLineSpacing();
+        });
+        $(".meter > span").each(function () {
+            $(this)
+                .data("origWidth", $(this).width())
+                .width(0)
+                .animate(
+                    {
+                        width: $(this).data("origWidth")
+                    },
+                    1200
+                );
         });
     });
 
