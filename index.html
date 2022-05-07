@@ -154,8 +154,8 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="margin: 0px 160px;margin-top: 5px;display:none;"><h4>Skills</h4></div>
-        <div class="row" style="margin: 0px 160px;margin-top: 5px;">
+        <div class="row" style="margin: 0px 160px;margin-top: 5px;"><h4>Skills</h4></div>
+        <div class="row skill-set-view" style="margin: 0px 160px;margin-top: 5px;">
             <div class="col-6 skill-container">
                 Web Development
                 <div class="meter" style="">
@@ -225,16 +225,21 @@
         $(".timeline-main").on('DOMSubtreeModified', function () {
             adjustTimeLineSpacing();
         });
-        $(".meter > span").each(function () {
-            $(this)
-                .data("origWidth", $(this).width())
-                .width(0)
-                .animate(
-                    {
-                        width: $(this).data("origWidth")
-                    },
-                    1200
-                );
+        
+        $(window).scroll(function () {
+            if ($('.skill-set-view').isOnScreen()) {
+                $(".meter > span").each(function () {
+                    $(this)
+                        .data("origWidth", $(this).width())
+                        .width(0)
+                        .animate(
+                            {
+                                width: $(this).data("origWidth")
+                            },
+                            1200
+                        );
+                });
+            }
         });
     });
 
@@ -244,4 +249,22 @@
             $(this).find(".timeline-mainline").css("top", timelinedialoqueHeight/2 - 7.5);
         });
     }
+
+    $.fn.isOnScreen = function () {
+        var win = $(window);
+
+        var viewport = {
+            top: win.scrollTop(),
+            left: win.scrollLeft()
+        };
+        viewport.right = viewport.left + win.width();
+        viewport.bottom = viewport.top + win.height();
+
+        var bounds = this.offset();
+        bounds.right = bounds.left + this.outerWidth();
+        bounds.bottom = bounds.top + this.outerHeight();
+
+        return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+
+    };
 </script>
