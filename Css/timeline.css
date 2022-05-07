@@ -30,8 +30,8 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    background-color: gray;
     border-radius: 100%;
+    border: 2px solid gray;
 }
 
 .timeline-mainline {
@@ -56,10 +56,10 @@
 }
 
 .timeline-mainline-connector-left {
-    height: 2px;
+    height: 2px !important;
     background: gray;
     position: absolute;
-    width: 70px;
+    width: 69px;
     right: 0;
     top: 1px;
     bottom: 0;
@@ -69,10 +69,10 @@
     opacity: unset;
 }
 .timeline-mainline-connector-right {
-    height: 2px;
+    height: 2px !important;
     background: gray;
     position: absolute;
-    width: 70px;
+    width: 69px;
     left: 0;
     top: 1px;
     bottom: 0;
