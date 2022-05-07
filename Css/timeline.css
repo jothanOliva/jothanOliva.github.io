@@ -5,10 +5,11 @@
     margin-left: auto;
     margin-right: auto;
 }
-
+.timeline-dialoque{
+    min-height:100px;
+}
 .timeline-dialoque-left {
     display: flex;
-    height: 100px;
     align-items: center;
     border-radius: 5px 100px 100px 5px;
     border: 2px solid gray;
@@ -17,7 +18,6 @@
 
 .timeline-dialoque-right {
     display: flex;
-    height: 100px;
     align-items: center;
     border-radius: 100px 5px 5px 100px;
     border: 2px solid gray;
