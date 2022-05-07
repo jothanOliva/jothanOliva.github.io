@@ -165,7 +165,6 @@
     function adjustTimeLineSpacing() {
         $("body").find(".timeline-piece").each(function () {
             let timelinedialoqueHeight = $(this).find(".timeline-dialoque").height();
-            $(this).find(".timeline-mainline-connector").css("height", timelinedialoqueHeight);
             $(this).find(".timeline-mainline").css("top", timelinedialoqueHeight/2 - 7.5);
         });
     }

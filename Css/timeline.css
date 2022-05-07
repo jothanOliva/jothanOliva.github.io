@@ -83,7 +83,7 @@
 }
 .timeline-mainline-connector {
     width: 2px;
-    height: 100px;
+    height: 1000px;
     background-color: gray;
     content: '';
     margin-right: 1px;
