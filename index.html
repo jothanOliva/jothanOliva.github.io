@@ -228,21 +228,19 @@
         
         $(window).scroll(function () {
             if ($('.skill-set-view').isOnScreen()) {
-                $(".meter > span").each(function () {
-                    $(this)
-                        .data("origWidth", $(this).width())
-                        .width(0)
-                        .animate(
-                            {
-                                width: $(this).data("origWidth")
-                            },
-                            1200
-                        );
-                });
+                if (!skillSetViewInitilize) {
+                    skillSetViewInitilize = true;
+                    $('.skill-set-view').find(".meter > span").each(function () {
+                        $(this).data("origWidth", $(this).width()).width(0).animate({
+                            width: $(this).data("origWidth")
+                        }, 1200);
+                    });
+                }
+                
             }
         });
     });
-
+    var skillSetViewInitilize = false;
     function adjustTimeLineSpacing() {
         $("body").find(".timeline-piece").each(function () {
             let timelinedialoqueHeight = $(this).find(".timeline-dialoque").height();
