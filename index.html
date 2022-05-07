@@ -46,7 +46,7 @@
         </div>
 
         <div class="row timeline-piece">
-            <div class="row timeline-dialoque-left">
+            <div class="row timeline-dialoque timeline-dialoque-left">
                 <div class="col">Test</div>
                 <div class="col-auto">
                     <div class="timeline-logo-container">
@@ -70,7 +70,7 @@
     
             <div class="col"></div>
             
-            <div class="row timeline-dialoque-right">
+            <div class="row timeline-dialoque timeline-dialoque-right">
                 <div class="col-auto">
                     <div class="timeline-logo-container">
                         <i class="fa-brands fa-linkedin"></i>
@@ -87,3 +87,15 @@
         </div>
     </body>
 </html>
+<script>
+    $(document).ready(function () {
+    });
+
+    function adjustTimeLineSpacing() {
+        $(".timeline-piece").each(function () {
+            let timelinedialoqueHeight = $(this).find(".timeline-dialoque").offsetHeight;
+            $(this).find(".timeline-mainline-connector").css("height", timelinedialoqueHeight);
+            $(this).find(".timeline-mainline").css("top", timelinedialoqueHeight/2 - 7.5);
+        });
+    }
+</script>
