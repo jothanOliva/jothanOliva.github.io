@@ -12,7 +12,7 @@
     <link href="/Css/progressbar.css" rel="stylesheet">
 </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-family: 'Roboto';">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: absolute;width: 100%;">
             <div class="navbar-brand" style="margin-left: 5px;">Jothan Abdon Oliva</div>
             <div style="margin-left: auto;margin-right: 5px;font-size: 28px;">
                 <a style="margin-right: 5px;">
@@ -24,7 +24,7 @@
             </div>
         </nav>
         <div class="main-content-container">
-            <section class="main-content-page active" data-pageno="1">
+            <section class="main-content-page active main-content-page-1">
                 <div class="row" style="margin: 0px 160px; background-color: lightgray;">
                     <img class="col-4" src="/Image/Profile.jpg">
                     <div class="col-8" style="display: flex;flex-wrap: wrap;align-content: center;">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </section>
-            <section  class="main-content-page"  data-pageno="2">
+            <section  class="main-content-page main-content-page-2">
                 <div class="row" style="margin: 0px 160px;margin-top: 5px;"><h4>Timeline</h4></div>
                 <div class="timeline-main" style="overflow:hidden;">
                     <div class="row timeline-piece">
@@ -159,7 +159,7 @@
                     </div>
                 </div>
             </section>
-            <section class="main-content-page" data-pageno="3">
+            <section class="main-content-page main-content-page-3">
                 <div class="row" style="margin: 0px 160px;margin-top: 5px;"><h4>Skills</h4></div>
                 <div class="row skill-set-view" style="margin: 0px 160px;margin-top: 5px;">
                     <div class="col-6 skill-container">
@@ -293,13 +293,13 @@
             if (currentPageNo != 1) {
                 currentPageNo++;
                 $(".main-content-container").find(".main-content-page.active").removeClass("active");
-                $(".main-content-container").find(".main-content-page*[data-pageno='" + currentPageNo + "']").addClass("active");
+                $(".main-content-container").find(".main-content-page.main-content-page-" + currentPageNo + "]").addClass("active");
             }
         } else {
             if (currentPageNo != maxPageNo) {
                 currentPageNo--;
                 $(".main-content-container").find(".main-content-page.active").removeClass("active");
-                $(".main-content-container").find(".main-content-page*[data-pageno='" + currentPageNo + "']").addClass("active");
+                $(".main-content-container").find(".main-content-page.main-content-page-" + currentPageNo + "]").addClass("active");
             }
         }
     }
