@@ -12,8 +12,26 @@
     <link href="/Css/progressbar.css" rel="stylesheet">
 </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: absolute;width: 100%;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed;width: 100%;top: 0;z-index: 1;">
             <div class="navbar-brand" style="margin-left: 5px;">Jothan Abdon Oliva</div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active pageindicator-1">
+                        <a class="nav-link">About Me</a>
+                    </li>
+                    <li class="nav-item pageindicator-2">
+                        <a class="nav-link">Timeline</a>
+                    </li>
+                    <li class="nav-item pageindicator-3">
+                        <a class="nav-link">Timeline</a>
+                    </li>
+                </ul>
+            </div>
             <div style="margin-left: auto;margin-right: 5px;font-size: 28px;">
                 <a style="margin-right: 5px;">
                     <i class="fa-brands fa-linkedin"></i>
@@ -289,23 +307,24 @@
     function scrollEventTest(directionUp) {
         let currentPageNo = parseInt($(".main-content-container").find(".main-content-page.active").attr("data-pageno"));
         let maxPageNo = $(".main-content-container").find(".main-content-page").length;
-        console.log(currentPageNo);
-        console.log(maxPageNo);
         if (directionUp) {
             if (currentPageNo != 1) {
                 currentPageNo--;
-                console.log(currentPageNo);
                 $(".main-content-container").find(".main-content-page.active").removeClass("active");
                 $(".main-content-container").find(".main-content-page.main-content-page-" + currentPageNo).addClass("active");
+                $("#navbarMain").find(".nav-item.active").removeClass("active");
+                $("#navbarMain").find(".pageindicator" + currentPageNo).addClass("active");
             }
         } else {
             if (currentPageNo != maxPageNo) {
                 currentPageNo++;
-                console.log(currentPageNo);
                 $(".main-content-container").find(".main-content-page.active").removeClass("active");
                 $(".main-content-container").find(".main-content-page.main-content-page-" + currentPageNo).addClass("active");
+                $("#navbarMain").find(".nav-item.active").removeClass("active");
+                $("#navbarMain").find(".pageindicator" + currentPageNo).addClass("active");
             }
         }
+        adjustTimeLineSpacing();
     }
     var skillSetViewInitilize = false;
     function adjustTimeLineSpacing() {
@@ -313,7 +332,7 @@
             let timelinedialoqueHeight = $(this).find(".timeline-dialoque").height();
             $(this).find(".timeline-mainline").animate({
                 top: timelinedialoqueHeight / 2 - 7.5
-            }, 4000);
+            }, 1200);
         });
     }
 
