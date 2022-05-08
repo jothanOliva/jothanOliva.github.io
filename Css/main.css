@@ -22,3 +22,6 @@ body {
 #navbarMain > .navbar-nav > .nav-item.active {
     font-weight: bold;
 }
+#navbarMain > .navbar-nav > .nav-item {
+    cursor:pointer;
+}

@@ -318,14 +318,18 @@
                 pageSet(currentPageNo);
             }
         }
-        adjustTimeLineSpacing();
+        
     }
-
+    var timelineViewInitilize = false
     function pageSet(pageNum) {
         $(".main-content-container").find(".main-content-page.active").removeClass("active");
         $(".main-content-container").find(".main-content-page.main-content-page-" + pageNum).addClass("active");
         $("#navbarMain").find(".nav-item.active").removeClass("active");
         $("#navbarMain").find(".pageindicator-" + pageNum).addClass("active");
+        if (!timelineViewInitilize) {
+            timelineViewInitilize = true;
+            adjustTimeLineSpacing()
+        }
     }
     var skillSetViewInitilize = false;
     function adjustTimeLineSpacing() {
