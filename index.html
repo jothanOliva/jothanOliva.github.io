@@ -293,14 +293,14 @@
         console.log(maxPageNo);
         if (directionUp) {
             if (currentPageNo != 1) {
-                currentPageNo++;
+                currentPageNo--;
                 console.log(currentPageNo);
                 $(".main-content-container").find(".main-content-page.active").removeClass("active");
                 $(".main-content-container").find(".main-content-page.main-content-page-" + currentPageNo + "]").addClass("active");
             }
         } else {
             if (currentPageNo != maxPageNo) {
-                currentPageNo--;
+                currentPageNo++;
                 console.log(currentPageNo);
                 $(".main-content-container").find(".main-content-page.active").removeClass("active");
                 $(".main-content-container").find(".main-content-page.main-content-page-" + currentPageNo + "]").addClass("active");
