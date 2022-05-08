@@ -5,3 +5,11 @@ body {
 .skill-container{
     margin-bottom:5px;
 }
+
+.main-content-page{
+    display:none;
+}
+
+.main-content-page.active {
+    display: block;
+}
