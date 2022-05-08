@@ -18,3 +18,7 @@ body {
     height: 100%;
     margin-top: 58px;
 }
+
+#navbarMain > .navbar-nav > .nav-item.active {
+    font-weight: bold;
+}

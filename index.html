@@ -22,13 +22,13 @@
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active pageindicator-1">
-                        <a class="nav-link">About Me</a>
+                        <a class="nav-link" onclick="pageSet(1)">About Me</a>
                     </li>
                     <li class="nav-item pageindicator-2">
-                        <a class="nav-link">Timeline</a>
+                        <a class="nav-link" onclick="pageSet(2)">Timeline</a>
                     </li>
                     <li class="nav-item pageindicator-3">
-                        <a class="nav-link">Skills</a>
+                        <a class="nav-link" onclick="pageSet(3)">Skills</a>
                     </li>
                 </ul>
             </div>
@@ -310,21 +310,22 @@
         if (directionUp) {
             if (currentPageNo != 1) {
                 currentPageNo--;
-                $(".main-content-container").find(".main-content-page.active").removeClass("active");
-                $(".main-content-container").find(".main-content-page.main-content-page-" + currentPageNo).addClass("active");
-                $("#navbarMain").find(".nav-item.active").removeClass("active");
-                $("#navbarMain").find(".pageindicator-" + currentPageNo).addClass("active");
+                pageSet(currentPageNo);
             }
         } else {
             if (currentPageNo != maxPageNo) {
                 currentPageNo++;
-                $(".main-content-container").find(".main-content-page.active").removeClass("active");
-                $(".main-content-container").find(".main-content-page.main-content-page-" + currentPageNo).addClass("active");
-                $("#navbarMain").find(".nav-item.active").removeClass("active");
-                $("#navbarMain").find(".pageindicator-" + currentPageNo).addClass("active");
+                pageSet(currentPageNo);
             }
         }
         adjustTimeLineSpacing();
+    }
+
+    function pageSet(pageNum) {
+        $(".main-content-container").find(".main-content-page.active").removeClass("active");
+        $(".main-content-container").find(".main-content-page.main-content-page-" + pageNum).addClass("active");
+        $("#navbarMain").find(".nav-item.active").removeClass("active");
+        $("#navbarMain").find(".pageindicator-" + pageNum).addClass("active");
     }
     var skillSetViewInitilize = false;
     function adjustTimeLineSpacing() {
