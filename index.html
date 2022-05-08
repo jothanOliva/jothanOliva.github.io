@@ -289,15 +289,19 @@
     function scrollEventTest(directionUp) {
         let currentPageNo = $(".main-content-container").find(".main-content-page.active").attr("data-pageno");
         let maxPageNo = $(".main-content-container").find(".main-content-page").length;
+        console.log(currentPageNo);
+        console.log(maxPageNo);
         if (directionUp) {
             if (currentPageNo != 1) {
                 currentPageNo++;
+                console.log(currentPageNo);
                 $(".main-content-container").find(".main-content-page.active").removeClass("active");
                 $(".main-content-container").find(".main-content-page.main-content-page-" + currentPageNo + "]").addClass("active");
             }
         } else {
             if (currentPageNo != maxPageNo) {
                 currentPageNo--;
+                console.log(currentPageNo);
                 $(".main-content-container").find(".main-content-page.active").removeClass("active");
                 $(".main-content-container").find(".main-content-page.main-content-page-" + currentPageNo + "]").addClass("active");
             }
