@@ -13,3 +13,7 @@ body {
 .main-content-page.active {
     display: block;
 }
+
+.main-content-container{
+    height:100vh;
+}
