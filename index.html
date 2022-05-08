@@ -287,7 +287,7 @@
     });
 
     function scrollEventTest(directionUp) {
-        let currentPageNo = $(".main-content-container").find(".main-content-page.active").attr("data-pageno");
+        let currentPageNo = parseInt($(".main-content-container").find(".main-content-page.active").attr("data-pageno"));
         let maxPageNo = $(".main-content-container").find(".main-content-page").length;
         console.log(currentPageNo);
         console.log(maxPageNo);
