@@ -45,33 +45,31 @@ body {
         }
 
 
-.hexagon {
-    width: 100px;
-    height: 57.735px;
-    background: #14253e;
-    position: relative;
+.main-hexagon {
+    display: flex;
+    --s: 100px;
+    --m: 4px;
+    --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
 }
 
-    .hexagon::before {
-        content: "";
-        position: absolute;
-        top: -28.8675px;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-left: 50px solid transparent;
-        border-right: 50px solid transparent;
-        border-bottom: 28.8675px solid #14253e;
+.container-hexagon {
+    font-size: 0;
+}
+
+    .container-hexagon .hexagon {
+        width: var(--s);
+        margin: var(--m);
+        height: calc(var(--s) * 1.1547);
+        display: inline-block;
+        font-size: initial;
+        clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+        margin-bottom: calc(var(--m) - var(--s) * 0.2885);
     }
 
-    .hexagon::after {
+    .container-hexagon::before {
         content: "";
-        position: absolute;
-        bottom: -28.8675px;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-left: 50px solid transparent;
-        border-right: 50px solid transparent;
-        border-top: 28.8675px solid #14253e;
+        width: calc(var(--s) / 2 + var(--m));
+        float: left;
+        height: 120%;
+        shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
     }
