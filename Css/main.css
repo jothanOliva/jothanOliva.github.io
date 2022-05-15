@@ -34,12 +34,12 @@ body {
     z-index: 1;
     background-color: #374457;
 }
-    .navbar-custom > .nav-link {
+    .navbar-custom .nav-link {
         color: white !important;
     }
-    .navbar-custom > .nav-link:hover {
+    .navbar-custom .nav-link:hover {
         color: white !important;
     }
-        .navbar-custom > .nav-link.active {
+        .navbar-custom .nav-link.active {
             color: whitesmoke!important;
         }
