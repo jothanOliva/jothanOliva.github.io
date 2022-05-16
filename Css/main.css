@@ -69,12 +69,9 @@ body {
 
         .hexagon-item .hexagon-container img {
             transform: rotate(-45deg) skew(0,0) scale(1.4,0.77);
+            vertical-align: bottom;
+            border: solid;
         }
-
-img {
-    vertical-align: bottom;
-    border: solid;
-}
 
 .hexagon-item:nth-child(odd) {
     margin-bottom: 2px;
